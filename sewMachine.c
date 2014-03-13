@@ -11,7 +11,10 @@
 #define LOW 0 // 0V
 
 #define dirPort0 DDRD
+#define inPort0 PIND
+#define port0 PORTD
 #define outPort0 (*((volatile bits_t*)(&PORTD)))
+#define footPedal PD0 //input
 #define outPin0 PD2
 #define outPin1 PD3
 #define outPin2 PD4
@@ -28,7 +31,7 @@
 #define port1 PORTB
 #define outPort1 (*((volatile bits_t*)(&PORTB)))
 #define inPort1 PINB //(*((volatile bits_t*)(&PINB)))
-#define sensorPin  PB0
+#define sensorPin  PB0 // input, magnetic switch
 #define motorPin  PB2
 #define outMotor  outPort1.bit2 //PB2
 //#define sensor  inPort1.bit0 //PB0
@@ -56,8 +59,11 @@ void setup(void){
     out2 = LOW;
     out3 = LOW;
  // input pin
-    inPort1 &= ~(1 << sensorPin);    // switch on pin PBx
+    inPort1 &= ~(1 << sensorPin);
     port1 |= (1 << sensorPin);    // enable pull-up resistor
+ // input pin
+    inPort0 &= ~(1 << footPedal);
+    port0 |= (1 << footPedal);    // enable pull-up resistor
 
 //beep
    dirPort0 |=(1<<buzzerPin);
@@ -135,10 +141,16 @@ debug(1);
 
 while(1){
         sleep (2);
-        OCR0A++;
-//      if ((PINB & (1 << PB0)) == 0){
+        //OCR0A++;
+
         if ((inPort1 & (1 << sensorPin)) == 0){
-            out3 = HIGH;
+            out3 = HIGH;OCR0A++;
+        }else{
+            out3 = LOW;
+        }
+
+        if ((inPort0 & (1 << footPedal)) == 0){
+            out3 = HIGH;OCR0A--;
         }else{
             out3 = LOW;
         }
