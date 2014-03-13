@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.epp
 *.map
 *.lss
@@ -6,3 +7,23 @@
 *.elf 
 *.out 
 *.?hex
+=======
+# Object files
+*.o
+*.ko
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+>>>>>>> c3882731e2d938cac19700f8ebedd067777ccef1

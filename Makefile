@@ -131,17 +131,18 @@ ALL_ASFLAGS = -mmcu=$(MCU) -I. -x assembler-with-cpp $(ASFLAGS)
 # Default target.
 all: clean program
 
-build: elf hex eep
+build: elf hex eep lss lst
 
 elf: $(TARGET).elf
 hex: $(TARGET).hex
 eep: $(TARGET).eep
 lss: $(TARGET).lss
+lst: $(TARGET).lst
 sym: $(TARGET).sym
 
 
 # Program the device.
-program: $(TARGET).hex $(TARGET).eep
+program: $(TARGET).hex $(TARGET).lss $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
 

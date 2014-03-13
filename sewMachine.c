@@ -1,4 +1,4 @@
-#define F_CPU 1000000UL //for delay.h
+﻿#define F_CPU 1000000UL //for delay.h
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -65,11 +65,11 @@ void setup(void){
 //motor pwm
   dirPort1 |= (1<<motorPin);    // make OC0A an output
   TCCR0B = 0;                                    // stop timer 0
-  TCCR0A = (1<<WGM01)|(1<<WGM02);                // select fast pwm mode 3
+  TCCR0A = (1<<WGM01)|(1<<WGM00);                // select fast pwm mode 3
   TCCR0A |= (1<<COM0A1);                         // clear OC0A on compare match
   OCR0A = 0x7e;                                  // 0x7f: 50% duty cycle
   TCCR0B = (1<<CS00);                            // prescale = 1.  freq = clock / 256
-//TCCR0B = (1 << CS01);   // clock source = CLK/8, start PWM
+    //TCCR0B = (1 << CS01);   // clock source = CLK/8, start PWM
 }
 
 void sleep(uint8_t millisec){
@@ -134,6 +134,8 @@ debug(1);
 //outMotor = HIGH;
 
 while(1){
+        sleep (2);
+        OCR0A++;
 //      if ((PINB & (1 << PB0)) == 0){
         if ((inPort1 & (1 << sensorPin)) == 0){
             out3 = HIGH;
