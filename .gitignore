@@ -6,3 +6,4 @@
 *.elf 
 *.out 
 *.?hex
+.comments/
