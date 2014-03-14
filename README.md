@@ -2,10 +2,15 @@ Sew machine
 ===========
 
 2014-03-04
-Controls a mini sew machine like a janome mini: needle always up.
+Controls a mini sew machine (janome mini and clones): 
+- Needle always up;
+- Needle always down;
+- Needle folows peadl;
+- Needle single shot;
 
 
 ![screenShot upDown](docs/anim/upDown/up-down.gif)
+
 ![ScreenShot sequence](docs/anim/seq.gif)
 
 
