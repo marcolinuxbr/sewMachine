@@ -8,7 +8,6 @@ Controls a mini sew machine (janome mini and clones):
 - [ ]Needle follows pedal;
 - [ ]Needle single shot;
 
-
 ![screenShot upDown](docs/anim/upDown/up-down.gif)
 
 ![ScreenShot sequence](docs/anim/seq.gif)
