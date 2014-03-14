@@ -2,10 +2,12 @@ Sew machine
 ===========
 
 2014-03-04
-Controls a mini sew machine liek a janome mini: needle always up.
+Controls a mini sew machine like a janome mini: needle always up.
 
 
-![ScreenShot](docs/charlie-dice.gif)
+![screenShot upDown](docs/anim/upDown/up-down.gif)
+![ScreenShot sequence](docs/anim/seq.gif)
+
 
 ```
 Using ATtiny2313.
