@@ -5,7 +5,7 @@ Sew machine
 Controls a mini sew machine (janome mini and clones): 
 - Needle always up;
 - Needle always down;
-- Needle folows peadl;
+- Needle follows pedal;
 - Needle single shot;
 
 
