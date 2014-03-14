@@ -9,8 +9,8 @@ Controls a mini sew machine liek a janome mini: needle always up.
 
 ```
 Using ATtiny2313.
-PD0: foot pedal : ----./ .---GND
+PD0: foot pedal : ----./ .---GND (red button)
 PD6: buzzer
-PD5: Magnetic sensor: ---10K---./ .---GND
+PD5: Magnetic sensor: ---10K---./ .---GND  (green button)
 PB2: pwm motor control
 
