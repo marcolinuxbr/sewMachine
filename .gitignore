@@ -1,9 +1,10 @@
 *.epp
+*.eep
 *.map
 *.lss
 *.d
-*.o 
-*.elf 
-*.out 
+*.o
+*.elf
+*.out
 *.?hex
 .comments/
